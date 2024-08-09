@@ -1,5 +1,8 @@
 Steps to Create Node Application (Web-Based):
 
+
+
+
 Step 1: Import required modules
 Load Node modules using the required directive. Load the http module and store the returned HTTP instance into a variable.
 
@@ -8,12 +11,19 @@ Syntax:
 var http = require("http");
 
 
+
+
 Step 2: Creating a server in Node
 Create a server to listen to the client’s requests. Create a server instance using the createServer() method. Bind the server to port 8080 using the listen method associated with the server instance.
 
 Syntax:
 
 http.createServer().listen(8080);
+
+
+
+
+
 
 Step 3: Read request and return response in Node:
 Read the client request made using the browser or console and return the response. A function with request and response parameters is used to read client requests and return responses.
