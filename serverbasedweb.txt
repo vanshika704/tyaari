@@ -1,0 +1,8 @@
+Steps to Create Node Application (Web-Based):
+
+Step 1: Import required modules
+Load Node modules using the required directive. Load the http module and store the returned HTTP instance into a variable.
+
+Syntax:
+
+var http = require("http");
