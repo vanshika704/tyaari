@@ -18,3 +18,31 @@ The assert.deepStrictEqual() function tests for deep equality between the actual
 actual: This parameter holds the actual value that need to be evaluated. It is of any type.
 expected: This parameter holds the expected value which is matched against actual value. It is of any type.
 message: This parameter holds the error message of string or error type. It is an optional parameter.
+
+
+
+
+ The assert.doesNotThrow() function asserts that the function fn does not throw an error.
+
+Syntax:
+
+assert.doesNotThrow(fn[, error][, message])
+
+try { 
+    assert.doesNotThrow( 
+        () => { 
+          throw new TypeError('The Wrong value error'); 
+        }, 
+        /abcd/, 
+        'Whoops'
+    ); 
+} catch(error) { 
+    console.log("Error:", error) 
+} 
+
+
+
+
+
+Node.js assert.equal() Function
+The assert.equal() function tests for equality between the actual and the expected parameters. If the condition is true it will not produce an output else an assertion error is raised. 
