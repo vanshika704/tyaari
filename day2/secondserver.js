@@ -3,22 +3,13 @@ const assert = require('assert').strict;
 
 http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-
-    let responseMessage = '';
-
     try {
         assert.deepStrictEqual({ a: '5' }, { a: '5' });
-        responseMessage += "First Assertion Passed\n";
+        res.end("No Error Occurred");
     } catch (error) {
-        responseMessage += `Error in First Assertion: ${error.message}\n`;
+        res.writeHead(500, {'Content-Type': 'text/plain'}); // Sending 500 status code for errors
+        res.end(`Error: ${error.message}`); // Use template literal to include error message
     }
 
-    try {
-        assert.deepStrictEqual({ a: 5 }, { a: '5' });
-        responseMessage += "Second Assertion Passed";
-    } catch (error) {
-        responseMessage += `Error in Second Assertion: ${error.message}`;
-    }
-
-    res.end(responseMessage);
+    
 }).listen(8080, () => console.log('Server is running at http://localhost:8080'));
