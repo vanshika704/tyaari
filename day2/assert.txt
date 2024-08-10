@@ -46,3 +46,34 @@ try {
 
 Node.js assert.equal() Function
 The assert.equal() function tests for equality between the actual and the expected parameters. If the condition is true it will not produce an output else an assertion error is raised. 
+
+Node.js assert.fail() Function
+Last Updated : 07 Aug, 2020
+The assert module provides a set of assertion functions for verifying invariants. The assert.fail() function throws an AssertionError with the provided the error message or with a default error message.
+
+
+Node.js assert.ifError() Function
+Last Updated : 16 Jun, 2022
+The assert module provides a set of assertion functions for verifying invariants. The assert.ifError() function throws value if value is not defined or null. When testing the error argument in callbacks, this function is very useful.
+
+
+Node.js assert.match() Function
+Last Updated : 21 Jun, 2022
+The assert module provides a set of assertion functions for verifying invariants. The assert.match() function expects the string input to match the regular expression. If the condition is true it will not produce an output else an assertion error is raised. 
+
+
+
+
+Node.js assert.notDeepEqual() Function
+Last Updated : 13 Jun, 2022
+The assert module provides a set of assertion functions for verifying invariants. The assert.notDeepEqual() function tests deep strict inequality between the actual and the expected parameters. If the condition is true it will not produce an output else an assertion error is raised.
+Syntax:
+
+assert.notDeepEqual(actual, expected[, message])
+
+
+
+
+Node.js assert.notDeepStrictEqual() Function
+Last Updated : 13 Jun, 2022
+The assert module provides a set of assertion functions for verifying invariants. The assert.notDeepStrictEqual() function tests for deep strict inequality. If the condition is true it will not produce an output else an assertion error is raised. Syntax:
