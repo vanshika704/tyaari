@@ -1,0 +1,2 @@
+ The assert module provides a set of assertion functions for verifying invariants.
+  In assert() function, if the value is not truth, then a AssertionError is thrown with a message property set equal to the value of the message parameter. 
