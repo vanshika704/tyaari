@@ -5,7 +5,7 @@ fs.readFile('file.txt', 'utf-8'
 })
 const a = fs.readFileSync('file.txt') 
     
-    console.log(a);
+    console.log(a.toString());
 
 
 console.log("finished reading file");
