@@ -1,5 +1,4 @@
-export function simple(){
+export function simple() {
     console.log("Simple");
 }
-
-// module.exports = simple;
+ // module.exports = simple;
