@@ -5,6 +5,8 @@ http.createServer(function (req, res){
         res.end("aagye firse muh uthake?");
     }else if(req.url =='/about'){
         res.end("Cheen tapak dam dam");
+    }else{res.statusCode = 404;
+        res.end('not found');
     }
 
    
