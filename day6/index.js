@@ -13,8 +13,8 @@ app.get("/fooditems", (req, res) => {
             res.status(500).send("Error reading file");
             return;
         }
-        const productData = JSON.parse(data);
-        res.json(productData);  // Send the product data as JSON
+        const dataobj = JSON.parse(data);
+        res.json(dataobj);  // Send the parsed JSON object as the response
     });
 });
 
