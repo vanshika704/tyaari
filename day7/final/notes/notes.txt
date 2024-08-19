@@ -1,0 +1,27 @@
+const fs = require("fs"); // import statement of module
+
+
+const textIn = fs.readFileSync("path to the input file", 'utf-8'); // textIn = text inout using readFileSync
+console.log(textIn);
+
+const textOut = "this is what i want to share:{$textIn} ";
+fs.writeFileSync("path to the output file", textOut); // textOut = text output using write
+
+Blocking                   and            non blocking code 
+Synchronous                and            Asynchronous code   
+
+in Synchronous code , line by line execution is done , however in Asynchronous, the async code runs in background , not stopping the rest of the code to works
+const fs = require("fs"); // import statement of module
+
+
+const textIn = fs.readFileSync("path to the input file", 'utf-8', (err,data) => {console.log ("data")}); // textIn = text input using readFileSync
+console.log(textIn);
+
+creating your own server :
+const http = require("http");// it is import 
+const server = http.createServer((req, res)=>{ // varibale bnaya server name se , http ka create server use kiya  jisme callback function lgaya  , jo do cheeje accept krega , response or requests .
+    res.end("hello server");// response me se end ko use kiya for typing something on server , 
+
+})
+
+// iske baad na port 
