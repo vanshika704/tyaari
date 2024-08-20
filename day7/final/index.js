@@ -1,7 +1,10 @@
 // const fs = require('fs');
 // const textln = fs.readFileSync('../../starter/txt/input.txt', 'utf-8');
 // console.log(textln);
-const temp = fs.readfileSync('${__dirname}/dev-data/data.json', 'utf-8')
+const tempOverview = fs.readfileSync('${__dirname}/templates/overview.html', 'utf-8')
+const tempCard = fs.readfileSync('${__dirname}/templates/card.html', 'utf-8')
+const tempProduct = fs.readfileSync('${__dirname}/templates/product.html', 'utf-8')
+
 const data = fs.readfileSync('${__dirname}/dev-data/data.json', 'utf-8');
 const dataObj = JSON.parse(data);
 
