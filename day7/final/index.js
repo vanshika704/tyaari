@@ -11,7 +11,8 @@ const dataObj = JSON.parse(data);
 const server = http.createServer((req, res) =>{
     const pathname = req.url;
     if (pathname === '/' || pathname ==='/overview'){
-        res.end('This is the OVERVIEW');
+        res.writehead(200, {'Content-type' : 'text/html'});
+        res.end(tempOverview);
     }
     else if (pathname === '/product') { 
         res.end('This is Product');
