@@ -23,6 +23,7 @@ const dataObj = JSON.parse(data);
 const server = http.createServer((req, res) => {
 
     console.log(req.url);
+    console.log(url.parse(req.url, true))
     const pathname = req.url;
 
     if (pathname === '/' || pathname === '/overview') {
