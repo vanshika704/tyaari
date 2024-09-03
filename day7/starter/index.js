@@ -2,7 +2,7 @@ const fs = require('fs');
 const http = require('http');
 
 // Corrected method name and string interpolation
-const tempOverview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');
+const tempOverview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');// this is a variable where we are reading the file 
 const tempCard = fs.readFileSync(`${__dirname}/templates/card.html`, 'utf-8');
 const tempProduct = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8');
 const replaceTemplate = (temp, product) =>{
