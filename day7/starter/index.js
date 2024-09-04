@@ -1,12 +1,12 @@
-const fs = require('fs');
+const fs = require('fs');// module import kre h https or fs 
 const http = require('http');
 
 // Corrected method name and string interpolation
 const tempOverview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');// this is a variable where we are reading the file 
 const tempCard = fs.readFileSync(`${__dirname}/templates/card.html`, 'utf-8');
-const tempProduct = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8');
+const tempProduct = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8'); // teeno files ke variable bnaye or ek ek krke unka data read kiya h
 const replaceTemplate = (temp, product) =>{ // replace template having two variables temp and product
-    let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+    let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName); // ab output define ki h , temp.replace function se usko replace krre h productname se , joki humne doosri file jisme data pda h , usme mention kiya hua h .
     output = output.replace(/{%IMAGE%}/g, product.image);
     output = output.replace(/{%PRICE%}/g, product.price);
     output = output.replace(/{%FROM%}/g, product.from);
@@ -15,7 +15,7 @@ const replaceTemplate = (temp, product) =>{ // replace template having two varia
     output = output.replace(/{%QUANTITY%}/g, product.quantity);
     output = output.replace(/{%ID%}/g, product.id);
    if (!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic')
-   return output;
+   return output; // conditional rendering lgai h , ki agar ye nahi toh ye sahi
 }
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);// file read ki , usko parse kiya 
