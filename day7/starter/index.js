@@ -5,7 +5,7 @@ const http = require('http');
 const tempOverview = fs.readFileSync(`${__dirname}/templates/overview.html`, 'utf-8');// this is a variable where we are reading the file 
 const tempCard = fs.readFileSync(`${__dirname}/templates/card.html`, 'utf-8');
 const tempProduct = fs.readFileSync(`${__dirname}/templates/product.html`, 'utf-8');
-const replaceTemplate = (temp, product) =>{
+const replaceTemplate = (temp, product) =>{ // replace template having two variables temp and product
     let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
     output = output.replace(/{%IMAGE%}/g, product.image);
     output = output.replace(/{%PRICE%}/g, product.price);
@@ -18,11 +18,11 @@ const replaceTemplate = (temp, product) =>{
    return output;
 }
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
-const dataObj = JSON.parse(data);
+const dataObj = JSON.parse(data);// file read ki , usko parse kiya 
 
 const server = http.createServer((req, res) => {
 
-    console.log(req.url);
+    // console.log(req.url);
     // console.log(url.parse(req.url, true));
     const pathname = req.url;
 
