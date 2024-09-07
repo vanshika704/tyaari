@@ -3,7 +3,6 @@ const url = require('url');
 const fs = require('fs');
 const path = require('path');
 
-// Load HTML templates
 const adminPanelTemplate = fs.readFileSync(path.join(__dirname, 'dashboard.html'), 'utf-8');
 const studentDashboardTemplate = fs.readFileSync(path.join(__dirname,'students.html'), 'utf-8');
 const studentListTemplate = fs.readFileSync(path.join(__dirname, 'studentslist.html'), 'utf-8');
