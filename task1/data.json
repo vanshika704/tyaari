@@ -1,0 +1,158 @@
+[
+    {
+      "id": 0,
+      "name": "Aryan Sharma",
+      "age": 12,
+      "grade": "7th",
+      "image": "👦",
+      "subjects": ["Mathematics", "Science", "Hindi"],
+      "marks": {
+        "Mathematics": 88,
+        "Science": 92,
+        "Hindi": 85
+      },
+      "attendance": "94%",
+      "extraCurricular": ["Cricket", "Math Club"],
+      "address": {
+        "street": "45, MG Road",
+        "city": "Delhi",
+        "country": "India"
+      },
+      "parentContact": {
+        "father": {
+          "name": "Ramesh Sharma",
+          "phone": "+91 9876543210"
+        },
+        "mother": {
+          "name": "Sita Sharma",
+          "phone": "+91 9876543211"
+        }
+      },
+      "remarks": "Aryan is a smart student with a passion for Mathematics."
+    },
+    {
+      "id": 1,
+      "name": "Ishita Gupta",
+      "age": 13,
+      "grade": "8th",
+      "image": "👧",
+      "subjects": ["English", "Mathematics", "Sanskrit"],
+      "marks": {
+        "English": 90,
+        "Mathematics": 87,
+        "Sanskrit": 95
+      },
+      "attendance": "97%",
+      "extraCurricular": ["Debate Club", "Classical Dance"],
+      "address": {
+        "street": "23, Park Street",
+        "city": "Mumbai",
+        "country": "India"
+      },
+      "parentContact": {
+        "father": {
+          "name": "Raj Gupta",
+          "phone": "+91 9987654321"
+        },
+        "mother": {
+          "name": "Meena Gupta",
+          "phone": "+91 9987654322"
+        }
+      },
+      "remarks": "Ishita is an exceptional student with great oratory skills."
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Iyer",
+      "age": 14,
+      "grade": "9th",
+      "image": "👦",
+      "subjects": ["Physics", "Chemistry", "Mathematics"],
+      "marks": {
+        "Physics": 92,
+        "Chemistry": 88,
+        "Mathematics": 94
+      },
+      "attendance": "91%",
+      "extraCurricular": ["Robotics Club", "Chess"],
+      "address": {
+        "street": "12, Mount Road",
+        "city": "Chennai",
+        "country": "India"
+      },
+      "parentContact": {
+        "father": {
+          "name": "Suresh Iyer",
+          "phone": "+91 9123456789"
+        },
+        "mother": {
+          "name": "Lakshmi Iyer",
+          "phone": "+91 9123456790"
+        }
+      },
+      "remarks": "Rajesh excels in Science and has a great interest in Robotics."
+    },
+    {
+      "id": 3,
+      "name": "Ananya Verma",
+      "age": 11,
+      "grade": "6th",
+      "image": "👧",
+      "subjects": ["English", "Social Studies", "Mathematics"],
+      "marks": {
+        "English": 85,
+        "Social Studies": 89,
+        "Mathematics": 86
+      },
+      "attendance": "96%",
+      "extraCurricular": ["Drama Club", "Music"],
+      "address": {
+        "street": "56, Ashok Nagar",
+        "city": "Bangalore",
+        "country": "India"
+      },
+      "parentContact": {
+        "father": {
+          "name": "Vijay Verma",
+          "phone": "+91 9876543212"
+        },
+        "mother": {
+          "name": "Anjali Verma",
+          "phone": "+91 9876543213"
+        }
+      },
+      "remarks": "Ananya is a talented performer with strong leadership skills."
+    },
+    {
+      "id": 4,
+      "name": "Vikram Singh",
+      "age": 15,
+      "grade": "10th",
+      "image": "👦",
+      "subjects": ["Biology", "Chemistry", "English"],
+      "marks": {
+        "Biology": 93,
+        "Chemistry": 89,
+        "English": 91
+      },
+      "attendance": "93%",
+      "extraCurricular": ["Football", "Environmental Club"],
+      "address": {
+        "street": "89, Jawahar Nagar",
+        "city": "Jaipur",
+        "country": "India"
+      },
+      "parentContact": {
+        "father": {
+          "name": "Ajay Singh",
+          "phone": "+91 9876543214"
+        },
+        "mother": {
+          "name": "Neha Singh",
+          "phone": "+91 9876543215"
+        }
+      },
+      "remarks": "Vikram is a highly motivated student with a keen interest in Biology."
+    }
+  ]
+  
