@@ -5,7 +5,7 @@ const path = require('path');
 
 
 const adminPanel = fs.readFileSync(path.join(__dirname, 'firstpage.html'), 'utf-8');
-
+const studentdashboard = fs.readFileSync(path.join(__dirname,'students.html'), 'utf-8');
 http.createServer((req, res) => {
    
     const pathName = url.parse(req.url, true).pathname;
@@ -18,7 +18,13 @@ http.createServer((req, res) => {
       
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.end("This is the student ID page");
-    } else {
+    }
+    else if (pathName === '/studentdashboard') {
+      
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(studentdashboard);
+    }
+     else {
        
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end("404 - Page not found");
