@@ -7,7 +7,7 @@ const adminPanelTemplate = fs.readFileSync(path.join(__dirname, 'dashboard.html'
 const studentDashboardTemplate = fs.readFileSync(path.join(__dirname,'students.html'), 'utf-8');
 const studentListTemplate = fs.readFileSync(path.join(__dirname, 'studentslist.html'), 'utf-8');
 
-
+// json data lo or usko convvert kro
 const students = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf-8'));
 
 // Define the replacement function
