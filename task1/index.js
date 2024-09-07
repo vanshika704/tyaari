@@ -10,7 +10,7 @@ const studentListTemplate = fs.readFileSync(path.join(__dirname, 'studentslist.h
 // json data lo or usko convvert kro
 const students = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf-8'));
 
-
+// jis function ke through hum sab jgh se replace krenge
 const replacement = (temp, student) => {
     let output = temp.replace(/{%NAME%}/g, student.name);
     output = output.replace(/{%ID%}/g, student.id);
