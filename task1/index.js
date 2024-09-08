@@ -7,7 +7,7 @@ const path = require('path');
 const adminPanelTemplate = fs.readFileSync(path.join(__dirname, 'dashboard.html'), 'utf-8');
 const studentDashboardTemplate = fs.readFileSync(path.join(__dirname, 'students.html'), 'utf-8');
 const studentListTemplate = fs.readFileSync(path.join(__dirname, 'studentslist.html'), 'utf-8');
-
+const page1 = fs.readFileSync(path.join(__dirname, 'Page1.html'), 'utf-8');
 // Load and parse JSON data
 const students = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf-8'));
 
@@ -52,7 +52,10 @@ http.createServer((req, res) => {
             res.end("Student not found");
         }
 
-    } else {
+     } else if (pathname === '/page1'){
+        res.end(page1);
+     } 
+    else {
         // Handle 404 for non-existent routes
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end("404 - Page not found");
