@@ -65,7 +65,18 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(data);
     });
-  } else {
+  } else if (pathname === '/studentslist' ) {
+    fs.readFile(path.join(__dirname, 'studentslist.html'), 'utf-8', (err, data) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'text/html' });
+        res.end('<h1>Server Error</h1>');
+        return;
+      }
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(data);
+    });
+  } 
+  else {
     // Handle static file requests
     const filePath = path.join(__dirname, pathname);
     const ext = path.extname(filePath);
