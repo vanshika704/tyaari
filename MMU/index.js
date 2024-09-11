@@ -1,40 +1,19 @@
-// const fs = require('fs');
-// const http = require('http');
-// const url = require('url');
-// const path = require('path');
-
-// const tempCard = fs.readFileSync(
-//   `${__dirname}/index.html`,
-//   'utf-8'
-// );
-
-// // Create an HTTP server
-// const server = http.createServer((req, res) => {
-//   const { pathname } = url.parse(req.url, true);
-
-//   // Handle the "/" and "/overview" routes
-//   if (pathname === '/' || pathname === '/overview') {
-//     res.writeHead(200, { 'Content-Type': 'text/html' });
-//     res.end(tempCard); // Corrected variable name
-//   } else {
-//     // Handle other routes (404 Not Found)
-//     res.writeHead(404, { 'Content-Type': 'text/html' });
-//     res.end('<h1>Page Not Found</h1>');
-//   }
-// });
-
-// // Start the server
-// server.listen(8000, '127.0.0.1', () => {
-//   console.log('Server is running on http://localhost:8000');
-// });
-
-
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
 const path = require('path');
+const replaceTemplate = require('./modules/teacherdashboardtemplate');
 
-// Define a function to get the MIME type based on the file extension
+// Read all necessary files
+const studentlist = fs.readFileSync(`${__dirname}/studentslist.html`, 'utf-8');
+const teacherdashboard = fs.readFileSync(`${__dirname}/teacher-dashboard.html`, 'utf-8');
+const studentdata = fs.readFileSync(`${__dirname}/data.json`, 'utf-8');
+const tempOverview = fs.readFileSync(`${__dirname}/index.html`, 'utf-8');
+
+// Parse the JSON data
+const data = JSON.parse(studentdata);
+
+// Function to get MIME type based on the file extension
 const getMimeType = (ext) => {
   const mimeTypes = {
     '.html': 'text/html',
@@ -50,34 +29,27 @@ const getMimeType = (ext) => {
   return mimeTypes[ext] || 'application/octet-stream';
 };
 
-// Create an HTTP server
+// Create the HTTP server
 const server = http.createServer((req, res) => {
   const { pathname } = url.parse(req.url, true);
-  
-  // Handle the "/" route for serving the index.html
+
+  // Route for index.html or overview
   if (pathname === '/' || pathname === '/overview') {
-    fs.readFile(path.join(__dirname, 'index.html'), 'utf-8', (err, data) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/html' });
-        res.end('<h1>Server Error</h1>');
-        return;
-      }
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(data);
-    });
-  } else if (pathname === '/studentslist' ) {
-    fs.readFile(path.join(__dirname, 'studentslist.html'), 'utf-8', (err, data) => {
-      if (err) {
-        res.writeHead(500, { 'Content-Type': 'text/html' });
-        res.end('<h1>Server Error</h1>');
-        return;
-      }
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(data);
-    });
-  } 
-  else {
-    // Handle static file requests
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(tempOverview);
+
+  // Route for studentslist.html
+  } else if (pathname === '/studentslist') {
+    // res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(studentlist);
+
+
+  // Route for teacher-dashboard.html
+  } else if (pathname === '/teacher-dashboard.html') {
+    
+    res.end(teacherdashboard);
+    
+  } else {
     const filePath = path.join(__dirname, pathname);
     const ext = path.extname(filePath);
 
