@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Showcase</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f0fe;
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background-color: #4a90e2;
+            padding: 20px;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+        }
+        marquee {
+            background-color: #e7f3ff;
+            color: #333;
+            padding: 10px;
+            font-weight: bold;
+        }
+        video, audio, iframe, canvas {
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .progress-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌟 Welcome to the Multimedia Showcase!</h1>
+</header>
+
+<!-- Scrolling Text -->
+<marquee behavior="scroll" direction="left">Check out our latest multimedia content!</marquee>
+
+<!-- Video Section -->
+<h2>🎥 Featured Video</h2>
+<video width="640" height="360" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Audio Section -->
+<h2>🎶 Background Music</h2>
+<audio controls>
+    <source src="https://www.bensound.com/bensound-music/bensound-ukulele.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+
+<!-- Embedded Iframe Section -->
+<h2>🗺️ Explore the World!</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0539921521106!2d-122.41941568468022!3d37.77492927975981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085814e4ef5e185%3A0x5aef6e3ebf95ebd3!2sSan%20Francisco%2C%20CA%2094102%2C%20USA!5e0!3m2!1sen!2sin!4v1696101729430!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+<!-- Canvas Section -->
+<h2>🎨 Draw on the Canvas!</h2>
+<canvas id="artCanvas" width="640" height="360" style="border:1px solid #4a90e2;"></canvas>
+<button onclick="clearCanvas()">Clear Canvas</button>
+
+<script>
+    const canvas = document.getElementById('artCanvas');
+    const context = canvas.getContext('2d');
+    let painting = false;
+
+    function startPosition(e) {
+        painting = true;
+        draw(e);
+    }
+
+    function endPosition() {
+        painting = false;
+        context.beginPath();
+    }
+
+    function draw(e) {
+        if (!painting) return;
+
+        const rect = canvas.getBoundingClientRect(); // Get the bounding rectangle of the canvas
+        const x = e.clientX - rect.left; // Calculate the x position
+        const y = e.clientY - rect.top; // Calculate the y position
+
+        context.lineWidth = 5;
+        context.lineCap = 'round';
+        context.strokeStyle = 'blue';
+        
+        context.lineTo(x, y);
+        context.stroke();
+        context.beginPath();
+        context.moveTo(x, y);
+    }
+
+    canvas.addEventListener('mousedown', startPosition);
+    canvas.addEventListener('mouseup', endPosition);
+    canvas.addEventListener('mousemove', draw);
+
+    // Clear Canvas Functionality
+    function clearCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+</script>
+
+<!-- Progress Bar -->
+<div class="progress-container">
+    <h2>📊 Task Progress</h2>
+    <progress id="progressBar" value="70" max="100">70%</progress>
+    <p>Progress: 70%</p>
+</div>
+
+<footer>
+    <p>© 2024 Multimedia Showcase | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
