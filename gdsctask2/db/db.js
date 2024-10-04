@@ -1,4 +1,4 @@
-import mongoose, { connection } from "mongoose";
+import mongoose from "mongoose";
 import dotenv from "dotenv"; 
 export const connectmongo = async ()=>{
     try {
