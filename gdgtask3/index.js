@@ -1,6 +1,6 @@
 import express from "express"
 import dotenv, { configDotenv } from "dotenv"
-
+import { connectmongo } from "./db/db.js";
 dotenv.config();
  const app = express();
  const PORT = process.env.PORT || 3000;
@@ -10,5 +10,5 @@ dotenv.config();
   });
   connectmongo();
   app.get('/', (req, res) => {
-    res.send("Hello from the server");
+    res.send("Cheen tapak dam dam");
   });
