@@ -1,8 +1,8 @@
-import express from "express"
-import dotenv, { configDotenv } from "dotenv"
-import { connectmongo } from "./db/db.js";
-import userRoutes  from "./routes/user.js"
-dotenv.config();
+import express from "express" // import express 
+import dotenv, { configDotenv } from "dotenv" //env
+import { connectmongo } from "./db/db.js";// connectmongo function from db.js
+import userRoutes  from "./routes/user.js" // userroutes from user.js
+dotenv.config(); // dotenv.config for configuring the file
  const app = express();
  const PORT = process.env.PORT || 3000;
 
