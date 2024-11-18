@@ -1,4 +1,4 @@
-const User = require('./models/User');
+const User = require('./models/User'); // user modal ko import kiya
 
 const createUser = async () => {
     const user = new User({
