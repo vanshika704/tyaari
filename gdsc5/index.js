@@ -1,17 +1,17 @@
-import express from 'express';
-import mongoose from 'mongoose';
+import express from "express"; // express import  kro bhyi
+import connectMongo from "./db/db.js"; // db.js ko bulaya 
+import dotenv from "dotenv"; //dotenv 
+import router from "./routes/user.js"; //userrouter
+dotenv.config(); // dotenv bulaya 
+const app = express();// express
 
-const PORT = process.env.PORT || 3000;
-const app = express();
-
-// Middleware or routes can be added here
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server connected on port ${PORT}`);
+app.get("/", (req, res) => {
+  res.send("Hello World!"); // app.get krke hello wrld
 });
 
-// Define a route
-app.get("/", (req, res) => {
-    res.send("Hello World!");
+app.use("/api/v1/user",router);// path bnaya 
+
+app.listen(3000, () => {
+  connectMongo(); // app.listen krke server on krdiya
+  console.log("http://localhost:3000");
 });
