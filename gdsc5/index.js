@@ -1,7 +1,17 @@
-import express from 'express'
-import mongosse from 'mongoose'
-const PORT = process.env.PORT;
+import express from 'express';
+import mongoose from 'mongoose';
+
+const PORT = process.env.PORT || 3000;
 const app = express();
- app.connect(PORT, ()=>{
-    console.log("Server connected");
- })
+
+// Middleware or routes can be added here
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server connected on port ${PORT}`);
+});
+
+// Define a route
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
