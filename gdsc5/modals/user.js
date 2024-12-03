@@ -15,6 +15,10 @@ const user = new mongoose.Schema({
         required: true,
         trim: true,
       },
+      age : {
+        type : Int8Array,
+      
+      }
     },
 {})
 //.
