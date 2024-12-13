@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-dotenv.config(); // Load environment variables from a .env file
+dotenv.config(); 
 
-const MONGO_URI = process.env.MONGODB_URI; // Ensure this matches your .env variable name
+const MONGO_URI = process.env.MONGODB_URI; 
 
 const connectDb = async () => {
     try {
