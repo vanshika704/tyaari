@@ -3,7 +3,7 @@ const fs = require('fs');
 
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-type': 'text/html'});
-
+//..
     if (req.url == '/') {
         res.end("aagye firse muh uthake?");
     } else if (req.url == '/about') {
