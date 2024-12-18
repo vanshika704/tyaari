@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import User from '../modals/users.js';  // Import User model
 
 dotenv.config(); 
-
+//nlxc m,
 const MONGO_URI = process.env.MONGODB_URI;
 
 const connectDb = async () => {

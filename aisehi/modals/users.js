@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     age: Number,
     email: String
 });
-
+//jfndcmx
 // Create the model
 const User = mongoose.model('User', userSchema);
 
