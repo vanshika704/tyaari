@@ -1,9 +1,10 @@
 import express from "express";
 import userpage from "./routes/user.js"; // Importing the user route
 import connectDB from "./db/db.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();// express
-const PORT = 5050;// port setup
+const PORT = process.env.PORT|| 3000;// port setup
 
 app.get("/", (req, res) => {
     res.send("aaha tamatar bde majedar");// aap.get krke phla route bnaya 
